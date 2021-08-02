@@ -1,0 +1,10 @@
+package com.troymorrow.Day5;
+
+import java.io.File;
+
+public class Demo20 {
+    public static void main(String[] args) {
+        File file = new File("db");
+        file.delete();
+    }
+}
