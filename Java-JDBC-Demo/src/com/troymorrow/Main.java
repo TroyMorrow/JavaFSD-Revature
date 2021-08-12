@@ -28,6 +28,7 @@ public class Main {
 
         switch(options){
             case 1:{
+                dao.startTranscation();
                 System.out.println("Enter Name: ");
                 String name = scanner.next();
                 System.out.println("Enter email:");
@@ -36,6 +37,14 @@ public class Main {
                 employee.setName(name);
                 employee.setEmail(email);
                 dao.addEmployee(employee);
+                String confirm = scanner.next();
+                if (confirm == "reject")
+                    dao.rollbackTransaction();
+
+                else
+                    dao.commitTransaction();
+
+
                 break;
 
             }

@@ -10,9 +10,13 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 
     private static Statement statement = null;
     Connection connection = null;
-    public EmployeeDAOImpl() throws SQLException {
-        this.connection = ConnectionFactory.getConnection();
-//        statement = connection.createStatement();
+    public EmployeeDAOImpl()  {
+        try {
+            this.connection = ConnectionFactory.getConnection();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
     }
 
     @Override
@@ -52,6 +56,30 @@ public class EmployeeDAOImpl implements EmployeeDAO{
             System.out.println("Employee deleted");
         else
             System.out.println("Oops! something went wrong");
+    }
+
+    @Override
+    public void startTranscation() throws SQLException {
+        String sql = "start transaction";
+        PreparedStatement ps  = connection.prepareStatement(sql);
+        ps.execute(sql);
+
+    }
+
+    @Override
+    public void commitTransaction() throws SQLException {
+        String sql = "commit";
+        PreparedStatement ps  = connection.prepareStatement(sql);
+        ps.execute(sql);
+
+    }
+
+    @Override
+    public void rollbackTransaction() throws SQLException {
+        String sql = "rollback";
+        PreparedStatement ps  = connection.prepareStatement(sql);
+        ps.execute(sql);
+
     }
 
     @Override
