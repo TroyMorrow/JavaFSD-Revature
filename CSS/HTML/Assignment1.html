@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        form{
+        
+        font-size: 20px;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    .wrapper{
+        background-color: rgb(211, 160, 141);
+        width: 380px;
+        margin-top: 100px;
+        border-radius: 7px;
+        box-shadow: 5px 10px #999;
+    }
+
+    .myinfo{
+        background-color: rgb(200, 241, 200);
+        width: 700px;
+        margin-top: 100px;
+        border-radius: 7px;
+        box-shadow: 5px 10px #999;
+    }
+
+
+    input[type="text"],input[type="password"]{
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+    }
+
+    .btn{
+        background-color: #2C67DE;
+        color: #fff;
+        padding: 5px 30px;
+        text-transform: capitalize;
+        font-family: 'Nunito', sans-serif;
+        border: 0px;
+        border-radius: 4px;
+        font-size: 22px;
+    }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+    <h1>Login</h1>
+
+    <form name="login" method="POST" onsubmit="onSubmit(event)" action="">
+        <div>
+            <label for="">Username</label>
+            <input type="text" name="username" id="name">
+        </div>
+
+        <div>
+            <label for="">Password</label>
+            <input type="password" name="" id="password">
+        </div>
+
+        <div>
+            <button type="submit" value="Login" id="login" onclick="toggleUserInfo()">Login</button>
+        </div>
+    </div>
+    </form>
+
+    <div class="myinfo" id="UserInfo" style="display: none;" onsubmit="onSubmit(event)" action="">
+    <h1>Troy Morrow</h1>
+    <form name="userinformation" method="GET" onsubmit="onSubmit(event)" action="">
+    <img src="img/profile.jfif" alt="">
+    <h2>Experience</h2>
+
+        <ul>
+
+            <li>Green House builder</li>
+                <ul>
+                    <li>Was left to work on project without supervison due to trust</li>
+                    <li>Trained other incoming works</li>
+                </ul>
+            <li>Warehouse worker</li>
+                <ul>
+                    <li>Worked in group of three to produce paper products with high quality while still moving at a fast pace</li>
+                    <li>Worked wiht multiple different people due to rotating workforce</li>
+                </ul>
+
+        </ul>
+
+    <h2>Skills</h2>
+    <ul>
+        <li>Experience in SQL and VBA</li>
+        <li>Adaptiable to work place and work partners</li>
+        <li>Great ability to remain unfazed when faced with issues</li>
+    </ul>
+    </div>
+    </form>
+
+    <script>
+        function onSubmit(event){
+            event.preventDefault();
+
+            var username = "MoyTrorrow";
+            var password = 1234;
+
+            if (username != "MoyTrorrow" && password != 1234){
+                alert("Incorrect password or username.")
+            } else{
+                alert("Welcome Back, Troy");
+                document.getElementById("UserInfo").style.display = "block";
+                function toggleUserInfo(){
+                    $('#UserInfo, #login').toggle();
+                }
+            }
+        }    
+    </script>
+    
+
+
+</body>
+</html>

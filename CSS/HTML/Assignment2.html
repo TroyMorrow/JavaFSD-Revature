@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        form{
+        
+            font-size: 20px;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .wrapper{
+            background-color: rgb(211, 160, 141);
+            width: 380px;
+            margin-top: 100px;
+            border-radius: 7px;
+            box-shadow: 5px 10px #999;
+        }
+
+        input[type="text"],input[type="password"]{
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+        }
+
+        .btn{
+            background-color: #2C67DE;
+            color: #fff;
+            padding: 5px 30px;
+            text-transform: capitalize;
+            font-family: 'Nunito', sans-serif;
+            border: 0px;
+            border-radius: 4px;
+            font-size: 22px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+    <h1>Registration Form</h1>
+
+    <form name="userform" method="post" onsubmit="onSubmit(event)" action="" >
+    <div>
+        <label for="">First name</label>
+        <input type="text" name="firstname" id="firstname">
+    </div>
+
+    <div>
+        <label for="">Last name</label>
+        <input type="text" name="lastname" id="lastname">
+    </div>
+
+    <div>
+        <label for="">Username</label>
+        <input type="text" name="username" id="name">
+    </div>
+
+    <div>
+        <label for="">Email</label>
+        <input type="text" name="" id="email">
+    </div>
+
+    <div>
+        <label for="">Password</label>
+        <input type="password" name="" id="password">
+    </div>
+
+    <div>
+        <label for="">Confrim Password</label>
+        <input type="password" name="" id="cpassword">
+    </div>
+
+    <div>
+        <input type="submit" value="Register">
+    </div>
+
+    <div></div>
+
+</div>
+</form>
+
+<script>
+    function onSubmit(event){
+        event.preventDefault();
+        
+        var firstname = document.userform.firstname;
+        var lastname = document.userform.lastname;
+        var username = document.userform.username.value;
+        var email = document.userform.email.value;
+        var password = document.userform.password.value;
+        var cpassword = document.userform.cpassword.value;
+        
+        if (firstname == null || firstname == ""){
+            alert('Username is required')
+
+        }else if(lastname == null || lastname ==""){
+            alert('Username is required')
+
+        }else if(username==null || name==""){
+            alert('Username is required')
+
+        }else if (email == null || email==""){
+                alert('email is required')
+
+        }else if (password == null || password ==""){
+                    alert('password is required')
+
+        }else if (cpassword == null || cpassword =="" || cpassword != password){
+                    alert('confirm password is required or Confirm password does not match password')
+        } else{
+            alert('Registration Complete')
+            document.userform.reset();
+        }
+            
+        
+    }
+
+</script>
+</body>
+</html>

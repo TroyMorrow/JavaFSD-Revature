@@ -69,12 +69,7 @@ public class DAOAccImpl implements DAOAccount{
         List<Account> accounts = new ArrayList<>();
         if (id1 != id2) {
             System.out.println("Wait for Customer " + id2 + " to respond");
-//            try{
-//                boolean custActive = false;
-//                wait();
-//            }catch (InterruptedException e){
-//                e.printStackTrace();
-//            }
+
         }
         String sql = "call sp_transfer_funds(" + amount + "," + id1 + "," + id2 + ")";
         Statement statement = connection.createStatement();

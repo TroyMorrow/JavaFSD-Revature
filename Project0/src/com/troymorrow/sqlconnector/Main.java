@@ -76,19 +76,11 @@ public class Main {
                     System.out.println("Enter password");
                     String password = scanner.next();
                     customer = dao.getCustomerByLogin(username, password);
-//                    for (Customer customer1: customers){
-//                        if (username.equals(customer1.getUsername()) && password.equals(customer1.getPassword())){
-//                            System.out.println("successful login");
-//                        }else{
-//
-//                        }
-//                    }
+
                     boolean custActive = true;
                     while (custActive) {
 
-//                        customer = dao.getCustomerByLogin(username, password);
                         System.out.println(customer);
-
                         System.out.println("*******************");
                         System.out.println("1) Update customer account");
                         System.out.println("2) Delete Customer account");
@@ -287,172 +279,7 @@ public class Main {
 
             }
 
-/*
-            System.out.println("Please select one of our program options.");
-            System.out.println("1) Add Customer");
-            System.out.println("2) Update Customer");
-            System.out.println("3) Delete Customer");
-//            System.out.println("4) View All Customer");
-            System.out.println("5) View One Customer");
-            System.out.println("6) Add Employee");
-            System.out.println("7) Update Employee");
-            System.out.println("8) Delete Employee");
-            System.out.println("9) View All Employees"); // Employee
 
-            System.out.println("11) Apply for Account"); //customer action
-            System.out.println("12) Update Accounts"); //customer action
-            System.out.println("13) Delete Accounts");
-
-            System.out.println("15) View One Account"); // Customer & employee action
-            System.out.println("16) View Transactions"); //Employee action
-            System.out.println("17) Exit");
-            System.out.println("******************");
-
-            int choice = scanner.nextInt();
-            switch (choice){
-                case 1: { //Add Customer
-                    System.out.println("Enter Customer First Name: ");
-                    String firstName = scanner.next();
-                    System.out.println("Enter Customer Last Name: ");
-                    String lastName = scanner.next();
-                    System.out.println("Enter Customer Email");
-                    String email = scanner.next();
-                    Customer customer = new Customer();
-                    customer.setFirstName(firstName);
-                    customer.setLastName(lastName);
-                    customer.setEmail(email);
-                    dao.addCustomer(customer);
-                    break;
-                }
-                case 2: { //Update Customer
-                    System.out.println("Enter Customer First Name: ");
-                    String firstName = scanner.next();
-                    System.out.println("Enter Customer Last Name: ");
-                    String lastName = scanner.next();
-                    System.out.println("Enter Customer Email");
-                    String email = scanner.next();
-                    System.out.println("Enter Customer ID");
-                    int id = scanner.nextInt();
-                    Customer customer = new Customer();
-                    customer.setFirstName(firstName);
-                    customer.setLastName(lastName);
-                    customer.setEmail(email);
-                    customer.setId(id);
-                    dao.updateCustomer(customer);
-
-
-                    break;
-                }
-                case 3: { //Delete Customer
-                    System.out.println("Enter Customer ID");
-                    int id = scanner.nextInt();
-                    dao.deleteCustomer(id);
-                    break;
-                }
-                case 4: { //View All Customer // did print out list
-                    List<Customer> customer = dao.getCustomer();
-                    for (Customer customers: customer){
-                        System.out.println(customers);
-                    }
-                    break;
-                }
-                case 5: { //View One Customer
-                    System.out.println("Select Customer to view");
-                    int custId = scanner.nextInt();
-                    Customer customer = dao.getCustomerByID(custId);
-                    System.out.println(customer);
-                    break;
-                }
-                case 6: { // Add Employee
-                    System.out.println("Enter Employee First Name: ");
-                    String firstName = scanner.next();
-                    System.out.println("Enter Employee Last Name: ");
-                    String lastName = scanner.next();
-                    System.out.println("Enter Employee Email");
-                    String email = scanner.next();
-                    Employee employee = new Employee();
-                    employee.setFirstName(firstName);
-                    employee.setLastName(lastName);
-                    employee.setEmail(email);
-                    daoE.addEmployee(employee);
-                    break;
-                }
-                case 7: { //Update Employee
-                    System.out.println("Enter Employee First Name: ");
-                    String firstName = scanner.next();
-                    System.out.println("Enter Employee Last Name: ");
-                    String lastName = scanner.next();
-                    System.out.println("Enter Employee Email");
-                    String email = scanner.next();
-                    System.out.println("Enter Employee ID");
-                    int id = scanner.nextInt();
-                    Employee employee = new Employee();
-                    employee.setFirstName(firstName);
-                    employee.setLastName(lastName);
-                    employee.setEmail(email);
-                    employee.setId(id);
-                    daoE.updateEmployee(employee);
-                    break;
-                }
-                case 8: { //Delete Employee
-                    System.out.println("Enter Employee ID");
-                    int id = scanner.nextInt();
-                    daoE.deleteEmployee(id);
-                    break;
-                }
-                case 9: { //Show all employee //Change array list
-                    List<Employee> employee = daoE.getEmployee();
-                    for (Employee employees: employee){
-                        System.out.println(employees);
-                    }
-                    break;
-                }
-                case 10: { //Show Employee based on ID
-                    System.out.println("Select Employee to view");
-                    int empId = scanner.nextInt();
-                    Employee employee = daoE.getEmployeeByID(empId);
-                    System.out.println(employee);
-                    break;
-                }
-                case 11: { //
-
-                }
-                case 12: { // update accounts
-                    System.out.println("Enter transaction type");
-                    String action = scanner.next();
-                    System.out.println("Enter amount");
-                    double amount = scanner.nextDouble();
-                    System.out.println("Enter Employee ID");
-                    int id = scanner.nextInt();
-                    Account account = new Account();
-                    double balance = account.getBalance();
-                    if (action.equals("Deposit")){
-                        balance += amount;
-                    }else if (action.equals("Withdraw")){
-                        balance -= amount;
-                    }else {
-                        System.out.println("Invalid Transaction type.");
-                    }
-                    account.setBalance(balance);
-                    account.setAccID(id);
-                    daoA.updateAccount(account);
-                    break;
-                }
-                case 13: {
-
-                }
-                case 14: {
-
-                }
-                case 15: {
-
-                }
-                case 16: {
-                    System.out.println("Exiting program...");
-                    active = false;
-                }
-            }
-            */
         }
 
 
