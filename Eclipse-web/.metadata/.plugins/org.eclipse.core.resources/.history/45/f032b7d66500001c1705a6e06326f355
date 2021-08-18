@@ -1,0 +1,18 @@
+package com.troy;
+
+import java.io.PrintWriter;
+
+import jakarta.servlet.http.HttpServletResponse;
+
+public class Servlet4 {
+		
+	public void doGet(HttpServletRequest request, HttpServletResponse response) {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		
+		String name = request.getParameter("name");
+		out.print("Welcome " + name);
+		out.close();
+	}
+	
+}

@@ -1,0 +1,30 @@
+package com.troy;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class ProfileServlet {
+	
+	public void goGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
+		response.setContentType("text/html");;
+		PrintWriter out = response.getWriter();
+		out.println("<h1>Login Web Program</h1>");
+		
+		String username = request.getParameter("username:");
+		String password = request.getParameter("password");
+		
+		if (username != "MoyTrorrow") {
+			out.println("Invalid username credentials");
+		} else if (password != "1234") {
+			out.println("Invalid password");
+		} else {
+			out.println("alert('Welcome Back, ' + username)");
+			
+			
+		}
+	}
+
+}

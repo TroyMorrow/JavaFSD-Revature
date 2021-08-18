@@ -1,0 +1,31 @@
+package com.troy;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class ProfileServlet {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		
+		Cookie[] cookie = request.getCookies();
+		if (cookie != null) {
+			String username = cookie[0].getValue();
+			
+			if (!username.equals("") || username != null) {
+				out.println("<h1>Welcome to the Profile</h1>");
+				out.println("<h1>Welcome, " + username + "</h1>");
+			}
+		}else {
+			out.println("Please go to login page and login first!");
+			request.getRequestDispatcher("Login.html").include(request,response);
+		}
+	}
+}

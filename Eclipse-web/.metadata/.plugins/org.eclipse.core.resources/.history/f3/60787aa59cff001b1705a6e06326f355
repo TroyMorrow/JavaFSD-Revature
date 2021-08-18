@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calculator</title>
+</head>
+<body>
+<div class="wrapper">
+	<h1>Calculator</h1>
+	<form action="calculator" method = "Post">
+	<table>
+		<tr>
+		<td> Enter First Number </td>
+		<td> <input type="number" name="num1" /> </td>
+		</tr>
+		<tr>
+		<td> Enter Second number</td>
+		<td> <input type="number" name="num2" /> </td>
+		</tr>
+		<td> Mathimatical Expression </td>
+		<td> <input type="text" name="math" /> </td>
+		<td>
+		<input type="btn" name="Add" value="+"/>
+		<input type="btn" name="Subtract" value="-"/>
+		<input type="btn" name="Multiply" value="*"/>
+		<input type="btn" name="Divide" value="/"/>
+		</td>	
+	</table>
+	</form>
+</div>
+</body>
+</html>
