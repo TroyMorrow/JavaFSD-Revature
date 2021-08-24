@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DAOEmpImpl implements DAOEmployee{
-    private static Statement statment = null;
+    private static Statement statement = null;
     Connection connection = null;
     public DAOEmpImpl(){
         try {

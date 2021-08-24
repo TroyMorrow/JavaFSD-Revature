@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="buttonOn()"> on</button>
+    <button onclick="buttonOff()"> off</button>
+
+    <img id="img1" src="img/on.jfif" width="200"/>
+
+
+    <script>
+        function buttonOn(){
+            documet.getElementById('img1').src = 'img/on.jfif'
+        }
+
+        function buttonOff(){
+            documet.getElementById('img1').src = 'img/off.jfif'
+        }
+    </script>
+</body>
+</html>
